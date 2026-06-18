@@ -124,16 +124,6 @@ When a customer clicks "Black" in your filter, AttributeHub intercepts the WooCo
 6. Product metabox showing mapping status per attribute
 7. Frontend filter: before (ugly codes) vs after (clean master labels)
 
-== External Services ==
-
-This plugin loads **SweetAlert2** from the jsDelivr CDN for admin modal dialogs and notifications. This library is only loaded on AttributeHub admin pages and is never loaded on the frontend of your site.
-
-* Service: [jsDelivr CDN](https://www.jsdelivr.com/)
-* Library: [SweetAlert2](https://sweetalert2.github.io/) (MIT License)
-* URL: `https://cdn.jsdelivr.net/npm/sweetalert2@11/`
-* When: Admin pages only (AttributeHub menu pages and WooCommerce product edit screen)
-* Data sent: No personal data is transmitted. The browser fetches the library file from jsDelivr's servers; jsDelivr may log standard access data (IP, user agent) per their [privacy policy](https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net).
-
 == Changelog ==
 
 = 1.0.0 =
