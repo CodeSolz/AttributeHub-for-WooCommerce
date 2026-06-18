@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="AttributeHub for WooCommerce">
+  <defs>
+
+    <!-- Background gradient: deep indigo → near-black -->
+    <linearGradient id="ah-bg" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0b0f2a"/>
+    </linearGradient>
+
+    <!-- Hub gradient: violet → sky blue -->
+    <linearGradient id="ah-hub" x1="90" y1="90" x2="166" y2="166" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Left-node fill -->
+    <radialGradient id="ah-nl" cx="40%" cy="35%">
+      <stop offset="0%"   stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </radialGradient>
+
+    <!-- Right-node fill -->
+    <radialGradient id="ah-nr" cx="40%" cy="35%">
+      <stop offset="0%"   stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </radialGradient>
+
+    <!-- Ambient glow behind hub -->
+    <radialGradient id="ah-glow" cx="128" cy="128" r="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Soft drop shadow on hub -->
+    <filter id="ah-shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10"
+                    flood-color="#7c3aed" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Subtle glow on small nodes -->
+    <filter id="ah-nglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Clip the whole icon to the rounded-rect -->
+    <clipPath id="ah-clip">
+      <rect width="256" height="256" rx="44"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ── Background ─────────────────────────────── -->
+  <rect width="256" height="256" rx="44" fill="url(#ah-bg)"/>
+
+  <!-- Subtle noise/shimmer band across top -->
+  <ellipse cx="128" cy="40" rx="140" ry="50"
+           fill="white" fill-opacity="0.03"/>
+
+  <!-- Ambient hub glow -->
+  <circle cx="128" cy="128" r="72" fill="url(#ah-glow)"/>
+
+
+  <!-- ── Connector lines ───────────────────────── -->
+  <!-- left → hub -->
+  <line x1="56"  y1="82"  x2="96"  y2="113" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+  <line x1="44"  y1="128" x2="90"  y2="128" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+  <line x1="56"  y1="174" x2="96"  y2="143" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- hub → right -->
+  <line x1="160" y1="113" x2="200" y2="82"  stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+  <line x1="166" y1="128" x2="212" y2="128" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+  <line x1="160" y1="143" x2="200" y2="174" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+
+
+  <!-- ── Left nodes (raw / unmapped attributes) ── -->
+  <circle cx="56"  cy="82"  r="11" fill="url(#ah-nl)" stroke="#a78bfa" stroke-width="1.5" filter="url(#ah-nglow)"/>
+  <circle cx="44"  cy="128" r="11" fill="url(#ah-nl)" stroke="#a78bfa" stroke-width="1.5" filter="url(#ah-nglow)"/>
+  <circle cx="56"  cy="174" r="11" fill="url(#ah-nl)" stroke="#a78bfa" stroke-width="1.5" filter="url(#ah-nglow)"/>
+
+  <!-- tiny inner highlight on left nodes -->
+  <circle cx="52"  cy="78"  r="3"  fill="white" opacity="0.25"/>
+  <circle cx="40"  cy="124" r="3"  fill="white" opacity="0.25"/>
+  <circle cx="52"  cy="170" r="3"  fill="white" opacity="0.25"/>
+
+
+  <!-- ── Right nodes (clean / mapped output) ────── -->
+  <circle cx="200" cy="82"  r="11" fill="url(#ah-nr)" stroke="#38bdf8" stroke-width="1.5" filter="url(#ah-nglow)"/>
+  <circle cx="212" cy="128" r="11" fill="url(#ah-nr)" stroke="#38bdf8" stroke-width="1.5" filter="url(#ah-nglow)"/>
+  <circle cx="200" cy="174" r="11" fill="url(#ah-nr)" stroke="#38bdf8" stroke-width="1.5" filter="url(#ah-nglow)"/>
+
+  <circle cx="196" cy="78"  r="3"  fill="white" opacity="0.25"/>
+  <circle cx="208" cy="124" r="3"  fill="white" opacity="0.25"/>
+  <circle cx="196" cy="170" r="3"  fill="white" opacity="0.25"/>
+
+
+  <!-- ── Central hub ────────────────────────────── -->
+  <!-- outer glow ring -->
+  <circle cx="128" cy="128" r="44" fill="none"
+          stroke="#a78bfa" stroke-width="1" opacity="0.3"/>
+
+  <!-- main hub disc -->
+  <circle cx="128" cy="128" r="40"
+          fill="url(#ah-hub)" filter="url(#ah-shadow)"/>
+
+  <!-- glossy inner highlight -->
+  <ellipse cx="116" cy="108" rx="18" ry="10"
+           fill="white" opacity="0.12" transform="rotate(-25,116,108)"/>
+
+  <!-- fine border -->
+  <circle cx="128" cy="128" r="40"
+          fill="none" stroke="white" stroke-width="1" opacity="0.18"/>
+
+  <!-- "AH" monogram -->
+  <text x="128" y="136"
+        font-family="'Arial Black','Arial',sans-serif"
+        font-size="28" font-weight="900"
+        fill="white" text-anchor="middle"
+        style="letter-spacing:3px;dominant-baseline:auto">AH</text>
+
+</svg>

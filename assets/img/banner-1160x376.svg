@@ -1,0 +1,472 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 376" width="1160" height="376">
+<defs>
+
+  <!-- ░░ BLUR for aurora blobs ░░ -->
+  <filter id="f-aurora"><feGaussianBlur stdDeviation="70"/></filter>
+  <filter id="f-orb"><feGaussianBlur stdDeviation="38"/></filter>
+  <filter id="f-soft"><feGaussianBlur stdDeviation="18"/></filter>
+
+  <!-- ░░ CARD SHADOW + glow ░░ -->
+  <filter id="f-card" x="-6%" y="-8%" width="112%" height="120%">
+    <feDropShadow dx="0" dy="12" stdDeviation="28" flood-color="#000000" flood-opacity="0.70"/>
+    <feDropShadow dx="0" dy="0"  stdDeviation="2"  flood-color="#7c3aed" flood-opacity="0.20"/>
+  </filter>
+
+  <!-- ░░ ICON glow ░░ -->
+  <filter id="f-icon" x="-60%" y="-60%" width="220%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#a78bfa" flood-opacity="0.75"/>
+  </filter>
+
+  <!-- ░░ PILL glow (purple) ░░ -->
+  <filter id="f-pp" x="-30%" y="-60%" width="160%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#8b5cf6" flood-opacity="0.55"/>
+  </filter>
+
+  <!-- ░░ PILL glow (cyan) ░░ -->
+  <filter id="f-pc" x="-30%" y="-60%" width="160%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#22d3ee" flood-opacity="0.55"/>
+  </filter>
+
+  <!-- ░░ PILL glow (green) ░░ -->
+  <filter id="f-pg" x="-30%" y="-60%" width="160%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#10b981" flood-opacity="0.50"/>
+  </filter>
+
+  <!-- ░░ TEXT shadow ░░ -->
+  <filter id="f-ts">
+    <feDropShadow dx="0" dy="2" stdDeviation="10" flood-color="#000" flood-opacity="0.7"/>
+  </filter>
+
+  <!-- ░░ BACKGROUNDS ░░ -->
+  <linearGradient id="g-bg" x1="0" y1="0" x2="1160" y2="376" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#06041a"/>
+    <stop offset="50%"  stop-color="#08051e"/>
+    <stop offset="100%" stop-color="#04030e"/>
+  </linearGradient>
+
+  <!-- left panel depth wash -->
+  <linearGradient id="g-lp" x1="0" y1="0" x2="480" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#160f3f" stop-opacity="0.60"/>
+    <stop offset="100%" stop-color="#160f3f" stop-opacity="0"/>
+  </linearGradient>
+
+  <!-- ░░ ACCENT purple→cyan ░░ -->
+  <linearGradient id="g-ac" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#7c3aed"/>
+    <stop offset="100%" stop-color="#06b6d4"/>
+  </linearGradient>
+
+  <!-- headline gradient -->
+  <linearGradient id="g-hl" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#ffffff"/>
+    <stop offset="65%"  stop-color="#ddd6fe"/>
+    <stop offset="100%" stop-color="#a78bfa"/>
+  </linearGradient>
+
+  <!-- card header gradient -->
+  <linearGradient id="g-ch" x1="488" y1="0" x2="1128" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#3b0f9e"/>
+    <stop offset="55%"  stop-color="#1e3a8a"/>
+    <stop offset="100%" stop-color="#0e4f6b"/>
+  </linearGradient>
+
+  <!-- card glass base -->
+  <linearGradient id="g-cg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+  </linearGradient>
+
+  <!-- card specular (top internal highlight) -->
+  <linearGradient id="g-cs" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.14"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0.00"/>
+  </linearGradient>
+
+  <!-- icon hub gradient -->
+  <linearGradient id="g-hub" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%"   stop-color="#a78bfa"/>
+    <stop offset="100%" stop-color="#22d3ee"/>
+  </linearGradient>
+
+  <!-- purple pill gradient -->
+  <linearGradient id="g-ppu" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#2e1065"/>
+    <stop offset="100%" stop-color="#1e1b4b"/>
+  </linearGradient>
+
+  <!-- cyan pill gradient -->
+  <linearGradient id="g-pcy" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#082f49"/>
+    <stop offset="100%" stop-color="#0c4a6e"/>
+  </linearGradient>
+
+  <!-- green pill gradient -->
+  <linearGradient id="g-pgr" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#052e16"/>
+    <stop offset="100%" stop-color="#064e3b"/>
+  </linearGradient>
+
+  <!-- amber pill gradient -->
+  <linearGradient id="g-pam" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#451a03"/>
+    <stop offset="100%" stop-color="#78350f"/>
+  </linearGradient>
+
+  <!-- ░░ DOT PATTERN ░░ -->
+  <pattern id="p-dot" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.9" fill="white" fill-opacity="0.042"/>
+  </pattern>
+
+  <!-- ░░ CLIP PATH for card (rounded rect) ░░ -->
+  <clipPath id="c-card">
+    <rect x="490" y="32" width="636" height="314" rx="16"/>
+  </clipPath>
+
+</defs>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LAYER 1 — BASE BACKGROUND
+════════════════════════════════════════════════════════════════ -->
+<rect width="1160" height="376" fill="url(#g-bg)"/>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LAYER 2 — AURORA BLOBS (simulate mesh gradient)
+════════════════════════════════════════════════════════════════ -->
+<!-- Purple aurora: top-left -->
+<circle cx="60"  cy="60"  r="290" fill="#5b21b6" opacity="0.28" filter="url(#f-aurora)"/>
+<!-- Violet smear: left-center -->
+<circle cx="200" cy="280" r="220" fill="#4c1d95" opacity="0.22" filter="url(#f-aurora)"/>
+<!-- Cyan aurora: bottom-right -->
+<circle cx="1080" cy="330" r="270" fill="#0891b2" opacity="0.28" filter="url(#f-aurora)"/>
+<!-- Teal: right-mid -->
+<circle cx="980"  cy="100" r="200" fill="#0e7490" opacity="0.18" filter="url(#f-aurora)"/>
+<!-- Blue: center -->
+<circle cx="620"  cy="340" r="200" fill="#1d4ed8" opacity="0.14" filter="url(#f-aurora)"/>
+<!-- Magenta accent: top-center -->
+<circle cx="580"  cy="-20" r="160" fill="#7e22ce" opacity="0.18" filter="url(#f-orb)"/>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LAYER 3 — DARK VEIL (keep aurora subtle)
+════════════════════════════════════════════════════════════════ -->
+<rect width="1160" height="376" fill="#060412" opacity="0.52"/>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LAYER 4 — DOT GRID TEXTURE
+════════════════════════════════════════════════════════════════ -->
+<rect width="1160" height="376" fill="url(#p-dot)"/>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LAYER 5 — LEFT PANEL DEPTH WASH
+════════════════════════════════════════════════════════════════ -->
+<rect width="480" height="376" fill="url(#g-lp)"/>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LAYER 6 — EDGE ACCENTS
+════════════════════════════════════════════════════════════════ -->
+<!-- Top bar -->
+<rect x="0" y="0" width="1160" height="2.5" fill="url(#g-ac)" opacity="1"/>
+<!-- Bottom bar -->
+<rect x="0" y="373.5" width="1160" height="2.5" fill="url(#g-ac)" opacity="0.40"/>
+<!-- Vertical separator hairline -->
+<line x1="464" y1="24" x2="464" y2="352" stroke="white" stroke-width="0.7" opacity="0.09"/>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BRANDING — LEFT PANEL
+════════════════════════════════════════════════════════════════ -->
+
+<!-- ── ICON ── -->
+<!-- Outer halo ring -->
+<circle cx="70" cy="82" r="42" fill="none" stroke="url(#g-ac)" stroke-width="0.8" opacity="0.30"/>
+<!-- Orbit dots -->
+<circle cx="70"  cy="40"  r="3.2" fill="#a78bfa" opacity="0.70"/>
+<circle cx="112" cy="82"  r="2.4" fill="#22d3ee" opacity="0.55"/>
+<circle cx="70"  cy="124" r="2.0" fill="#8b5cf6" opacity="0.45"/>
+<circle cx="28"  cy="82"  r="2.4" fill="#06b6d4" opacity="0.45"/>
+<!-- Inner ring -->
+<circle cx="70" cy="82" r="30" fill="none" stroke="white" stroke-width="0.8" opacity="0.18"/>
+<!-- Hub disc -->
+<circle cx="70" cy="82" r="28" fill="url(#g-hub)" filter="url(#f-icon)"/>
+<!-- Gloss highlight -->
+<ellipse cx="59" cy="68" rx="13" ry="7.5" fill="white" opacity="0.18" transform="rotate(-30 59 68)"/>
+<!-- AH text -->
+<text x="70" y="90" font-family="'Arial Black',Arial,sans-serif"
+      font-size="17" font-weight="900" fill="white" text-anchor="middle"
+      letter-spacing="2" filter="url(#f-ts)">AH</text>
+
+<!-- ── HEADLINE ── -->
+<text x="116" y="78" font-family="'Arial Black',Arial,sans-serif"
+      font-size="52" font-weight="900" fill="url(#g-hl)"
+      filter="url(#f-ts)" letter-spacing="-1">AttributeHub</text>
+
+<!-- ── SUB-BRAND ── -->
+<text x="118" y="106" font-family="Arial,Helvetica,sans-serif"
+      font-size="14.5" font-weight="600" fill="#a78bfa" letter-spacing="3" opacity="0.88">
+  FOR WOOCOMMERCE
+</text>
+
+<!-- ── DIVIDER ── -->
+<rect x="44" y="124" width="368" height="1.5" rx="1" fill="url(#g-ac)" opacity="0.65"/>
+
+<!-- ── TAGLINE ── -->
+<text x="44" y="156" font-family="Arial,Helvetica,sans-serif"
+      font-size="18" font-weight="700" fill="white" filter="url(#f-ts)">
+  Transform messy attribute values into
+</text>
+<text x="44" y="180" font-family="Arial,Helvetica,sans-serif"
+      font-size="18" font-weight="700" fill="white" filter="url(#f-ts)">
+  clean, unified customer filters.
+</text>
+
+<!-- Supporting text -->
+<text x="44" y="208" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" fill="#64748b" letter-spacing="0.1">
+  No data changes · WooCommerce native · HPOS ready
+</text>
+
+<!-- ── FEATURE LIST ── -->
+<!-- Item 1 -->
+<rect x="44" y="228" width="8" height="8" rx="2" fill="#7c3aed"/>
+<text x="60" y="237" font-family="Arial,Helvetica,sans-serif"
+      font-size="13.5" font-weight="600" fill="#c4b5fd">Attribute scanner &amp; auto-mapping engine</text>
+
+<!-- Item 2 -->
+<rect x="44" y="253" width="8" height="8" rx="2" fill="#06b6d4"/>
+<text x="60" y="262" font-family="Arial,Helvetica,sans-serif"
+      font-size="13.5" font-weight="600" fill="#67e8f9">Master directory · CSV export / import</text>
+
+<!-- Item 3 -->
+<rect x="44" y="278" width="8" height="8" rx="2" fill="#10b981"/>
+<text x="60" y="287" font-family="Arial,Helvetica,sans-serif"
+      font-size="13.5" font-weight="600" fill="#6ee7b7">Live filter rewrite — zero backend edits</text>
+
+<!-- Wordmark footer -->
+<text x="44" y="352" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" fill="#374151" letter-spacing="1.5">CODESOLZ.NET</text>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PRODUCT CARD — RIGHT PANEL
+════════════════════════════════════════════════════════════════ -->
+
+<!-- Outer glow ring -->
+<rect x="486" y="28" width="648" height="322" rx="20" fill="none"
+      stroke="url(#g-ac)" stroke-width="1.2" opacity="0.30"/>
+
+<!-- ── GLASS LAYERS ── -->
+
+<!-- Layer A: dark tinted base -->
+<rect x="490" y="32" width="636" height="314" rx="17"
+      fill="#08051e" fill-opacity="0.92" filter="url(#f-card)"/>
+
+<!-- Layer B: glass white tint -->
+<rect x="490" y="32" width="636" height="314" rx="17"
+      fill="url(#g-cg)"/>
+
+<!-- Layer C: specular top-left highlight (3D glass illusion) -->
+<rect x="491" y="33" width="300" height="100" rx="17"
+      fill="url(#g-cs)" clip-path="url(#c-card)"/>
+
+<!-- Layer D: inner top edge highlight (bright rim) -->
+<rect x="491" y="33" width="634" height="1.8" rx="1"
+      fill="white" opacity="0.32"/>
+
+<!-- Layer E: inner left edge highlight -->
+<rect x="491" y="33" width="1.5" height="312" rx="1"
+      fill="white" opacity="0.15"/>
+
+<!-- Layer F: outer border -->
+<rect x="490" y="32" width="636" height="314" rx="17"
+      fill="none" stroke="white" stroke-width="1" opacity="0.13"/>
+
+<!-- ── HEADER BAR ── -->
+<rect x="490" y="32" width="636" height="52" rx="17" fill="url(#g-ch)" clip-path="url(#c-card)"/>
+<rect x="490" y="66" width="636" height="18" fill="url(#g-ch)"/>
+<!-- Header inner gloss -->
+<rect x="491" y="33" width="634" height="26" rx="17"
+      fill="white" fill-opacity="0.06" clip-path="url(#c-card)"/>
+<!-- Header bottom border -->
+<rect x="490" y="83" width="636" height="1" fill="white" opacity="0.10"/>
+
+<!-- Window chrome dots -->
+<circle cx="515" cy="58" r="5.5" fill="#ff5f57" opacity="0.80"/>
+<circle cx="533" cy="58" r="5.5" fill="#febc2e" opacity="0.70"/>
+<circle cx="551" cy="58" r="5.5" fill="#28c840" opacity="0.65"/>
+
+<!-- Header title -->
+<text x="574" y="63" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" font-weight="700" fill="white" opacity="0.92" letter-spacing="0.4">
+  Attribute Mapping Editor
+</text>
+
+<!-- Live badge -->
+<rect x="1052" y="44" width="58" height="22" rx="11"
+      fill="white" fill-opacity="0.12" stroke="white" stroke-width="0.7" stroke-opacity="0.25"/>
+<circle cx="1065" cy="55" r="4.5" fill="#4ade80" filter="url(#f-pg)"/>
+<text x="1083" y="60" font-family="Arial,Helvetica,sans-serif"
+      font-size="11" font-weight="700" fill="white" opacity="0.85" text-anchor="middle">LIVE</text>
+
+<!-- ── COLUMN HEADERS ── -->
+<text x="516" y="106" font-family="Arial,Helvetica,sans-serif"
+      font-size="10.5" font-weight="700" fill="#475569" letter-spacing="1.8">RAW VALUE</text>
+<text x="763" y="106" font-family="Arial,Helvetica,sans-serif"
+      font-size="10.5" font-weight="700" fill="#475569" letter-spacing="1.8">MASTER GROUP</text>
+<text x="1015" y="106" font-family="Arial,Helvetica,sans-serif"
+      font-size="10.5" font-weight="700" fill="#475569" letter-spacing="1.8" text-anchor="middle">STATUS</text>
+
+<!-- Column dividers -->
+<line x1="748" y1="88" x2="748" y2="330" stroke="white" stroke-width="0.6" opacity="0.06"/>
+<line x1="960" y1="88" x2="960" y2="330" stroke="white" stroke-width="0.6" opacity="0.06"/>
+
+<!-- Header underline -->
+<rect x="490" y="112" width="636" height="0.8" fill="white" opacity="0.07"/>
+
+
+<!-- ════════ ROW 1 — XL-Mens → XL ════════ -->
+<rect x="490" y="114" width="636" height="38" fill="white" fill-opacity="0.022"/>
+<!-- Accent bar -->
+<rect x="490" y="114" width="3"   height="38" rx="1.5" fill="#8b5cf6" opacity="0.9"/>
+<!-- Status indicator -->
+<circle cx="509" cy="133" r="4" fill="#8b5cf6" filter="url(#f-pp)"/>
+<!-- Raw value -->
+<text x="524" y="138" font-family="'Courier New',Courier,monospace"
+      font-size="13.5" fill="#e2e8f0" letter-spacing="0.2">XL-Mens</text>
+<!-- Arrow -->
+<text x="742" y="138" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" fill="#334155" text-anchor="middle">›</text>
+<!-- Master group pill -->
+<rect x="760" y="121" width="88" height="24" rx="12" fill="url(#g-ppu)" filter="url(#f-pp)"/>
+<rect x="760" y="121" width="88" height="24" rx="12" fill="none" stroke="#818cf8" stroke-width="1"/>
+<!-- Inner gloss -->
+<rect x="761" y="122" width="86" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<circle cx="775" cy="133" r="3.8" fill="#818cf8"/>
+<text x="804" y="138" font-family="Arial,Helvetica,sans-serif"
+      font-size="12.5" font-weight="700" fill="#e0e7ff" text-anchor="middle">XL</text>
+<!-- Status pill -->
+<rect x="970" y="122" width="90" height="24" rx="12" fill="url(#g-pgr)" filter="url(#f-pg)"/>
+<rect x="970" y="122" width="90" height="24" rx="12" fill="none" stroke="#34d399" stroke-width="1"/>
+<rect x="971" y="123" width="88" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<text x="1015" y="138" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">✓  mapped</text>
+<!-- Row divider -->
+<rect x="493" y="151" width="630" height="0.6" fill="white" opacity="0.04"/>
+
+
+<!-- ════════ ROW 2 — mens_xl → XL ════════ -->
+<rect x="490" y="153" width="636" height="38" fill="white" fill-opacity="0.014"/>
+<rect x="490" y="153" width="3"   height="38" rx="1.5" fill="#7c3aed" opacity="0.9"/>
+<circle cx="509" cy="172" r="4" fill="#7c3aed" filter="url(#f-pp)"/>
+<text x="524" y="177" font-family="'Courier New',Courier,monospace"
+      font-size="13.5" fill="#e2e8f0" letter-spacing="0.2">mens_xl</text>
+<text x="742" y="177" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" fill="#334155" text-anchor="middle">›</text>
+<rect x="760" y="160" width="88" height="24" rx="12" fill="url(#g-ppu)" filter="url(#f-pp)"/>
+<rect x="760" y="160" width="88" height="24" rx="12" fill="none" stroke="#818cf8" stroke-width="1"/>
+<rect x="761" y="161" width="86" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<circle cx="775" cy="172" r="3.8" fill="#818cf8"/>
+<text x="804" y="177" font-family="Arial,Helvetica,sans-serif"
+      font-size="12.5" font-weight="700" fill="#e0e7ff" text-anchor="middle">XL</text>
+<rect x="970" y="161" width="90" height="24" rx="12" fill="url(#g-pgr)" filter="url(#f-pg)"/>
+<rect x="970" y="161" width="90" height="24" rx="12" fill="none" stroke="#34d399" stroke-width="1"/>
+<rect x="971" y="162" width="88" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<text x="1015" y="177" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">✓  mapped</text>
+<rect x="493" y="190" width="630" height="0.6" fill="white" opacity="0.04"/>
+
+
+<!-- ════════ ROW 3 — nvy_blue_2 → Navy ════════ -->
+<rect x="490" y="192" width="636" height="38" fill="white" fill-opacity="0.022"/>
+<rect x="490" y="192" width="3"   height="38" rx="1.5" fill="#06b6d4" opacity="0.9"/>
+<circle cx="509" cy="211" r="4" fill="#06b6d4" filter="url(#f-pc)"/>
+<text x="524" y="216" font-family="'Courier New',Courier,monospace"
+      font-size="13.5" fill="#e2e8f0" letter-spacing="0.2">nvy_blue_2</text>
+<text x="742" y="216" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" fill="#334155" text-anchor="middle">›</text>
+<rect x="760" y="199" width="102" height="24" rx="12" fill="url(#g-pcy)" filter="url(#f-pc)"/>
+<rect x="760" y="199" width="102" height="24" rx="12" fill="none" stroke="#22d3ee" stroke-width="1"/>
+<rect x="761" y="200" width="100" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<circle cx="775" cy="211" r="3.8" fill="#22d3ee"/>
+<text x="817" y="216" font-family="Arial,Helvetica,sans-serif"
+      font-size="12.5" font-weight="700" fill="#cffafe" text-anchor="middle">Navy</text>
+<rect x="970" y="200" width="90" height="24" rx="12" fill="url(#g-pgr)" filter="url(#f-pg)"/>
+<rect x="970" y="200" width="90" height="24" rx="12" fill="none" stroke="#34d399" stroke-width="1"/>
+<rect x="971" y="201" width="88" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<text x="1015" y="216" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">✓  mapped</text>
+<rect x="493" y="229" width="630" height="0.6" fill="white" opacity="0.04"/>
+
+
+<!-- ════════ ROW 4 — NAVYBLUE → Navy ════════ -->
+<rect x="490" y="231" width="636" height="38" fill="white" fill-opacity="0.014"/>
+<rect x="490" y="231" width="3"   height="38" rx="1.5" fill="#0891b2" opacity="0.9"/>
+<circle cx="509" cy="250" r="4" fill="#0891b2" filter="url(#f-pc)"/>
+<text x="524" y="255" font-family="'Courier New',Courier,monospace"
+      font-size="13.5" fill="#e2e8f0" letter-spacing="0.2">NAVYBLUE</text>
+<text x="742" y="255" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" fill="#334155" text-anchor="middle">›</text>
+<rect x="760" y="238" width="102" height="24" rx="12" fill="url(#g-pcy)" filter="url(#f-pc)"/>
+<rect x="760" y="238" width="102" height="24" rx="12" fill="none" stroke="#22d3ee" stroke-width="1"/>
+<rect x="761" y="239" width="100" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<circle cx="775" cy="250" r="3.8" fill="#22d3ee"/>
+<text x="817" y="255" font-family="Arial,Helvetica,sans-serif"
+      font-size="12.5" font-weight="700" fill="#cffafe" text-anchor="middle">Navy</text>
+<rect x="970" y="239" width="90" height="24" rx="12" fill="url(#g-pgr)" filter="url(#f-pg)"/>
+<rect x="970" y="239" width="90" height="24" rx="12" fill="none" stroke="#34d399" stroke-width="1"/>
+<rect x="971" y="240" width="88" height="8" rx="10" fill="white" fill-opacity="0.06"/>
+<text x="1015" y="255" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">✓  mapped</text>
+<rect x="493" y="268" width="630" height="0.6" fill="white" opacity="0.04"/>
+
+
+<!-- ════════ ROW 5 — extra-large-xl → PENDING ════════ -->
+<rect x="490" y="270" width="636" height="38" fill="white" fill-opacity="0.008"/>
+<rect x="490" y="270" width="3"   height="38" rx="1.5" fill="#f59e0b" opacity="0.7"/>
+<circle cx="509" cy="289" r="4" fill="#f59e0b" opacity="0.75"/>
+<text x="524" y="294" font-family="'Courier New',Courier,monospace"
+      font-size="13.5" fill="#6b7280" letter-spacing="0.2">extra-large-xl</text>
+<text x="742" y="294" font-family="Arial,Helvetica,sans-serif"
+      font-size="13" fill="#1f2937" text-anchor="middle">—</text>
+<!-- Dashed unassigned pill -->
+<rect x="760" y="277" width="110" height="24" rx="12"
+      fill="#0f0f1a" stroke="#374151" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="815" y="293" font-family="Arial,Helvetica,sans-serif"
+      font-size="12" fill="#4b5563" text-anchor="middle">unassigned</text>
+<!-- Pending status pill -->
+<rect x="970" y="278" width="90" height="24" rx="12" fill="url(#g-pam)"/>
+<rect x="970" y="278" width="90" height="24" rx="12" fill="none" stroke="#f59e0b" stroke-width="1"/>
+<rect x="971" y="279" width="88" height="8" rx="10" fill="white" fill-opacity="0.05"/>
+<text x="1015" y="294" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" font-weight="700" fill="#fcd34d" text-anchor="middle">⚠  pending</text>
+
+
+<!-- ── CARD FOOTER ── -->
+<rect x="490" y="307" width="636" height="1" fill="white" opacity="0.07"/>
+<rect x="490" y="308" width="636" height="38" rx="17" fill="white" fill-opacity="0.02" clip-path="url(#c-card)"/>
+
+<!-- Footer stats -->
+<circle cx="506" cy="325" r="4" fill="#4ade80" opacity="0.8"/>
+<text x="516" y="329" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" fill="#4b5563">4 mapped</text>
+
+<circle cx="584" cy="325" r="4" fill="#f59e0b" opacity="0.8"/>
+<text x="594" y="329" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" fill="#4b5563">1 pending</text>
+
+<circle cx="652" cy="325" r="4" fill="#475569" opacity="0.8"/>
+<text x="662" y="329" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" fill="#4b5563">5 total</text>
+
+<text x="1118" y="329" font-family="Arial,Helvetica,sans-serif"
+      font-size="11.5" fill="#374151" text-anchor="end">pa_size · pa_color</text>
+
+<!-- Footer right edge shine -->
+<rect x="1124" y="308" width="2" height="38" rx="1"
+      fill="white" opacity="0.06"/>
+
+</svg>

@@ -1,0 +1,22 @@
+/* AttributeHub Frontend Styles — minimal layered nav overrides */
+
+/* Master term label in layered nav */
+.ah-master-term .woocommerce-widget-layered-nav-list__item-label,
+.ah-master-term > a {
+	font-weight: 600;
+}
+
+/* Unmapped term styling (subtle) */
+.ah-unmapped-term {
+	opacity: 0.7;
+}
+
+/* Hidden terms (should not appear — CSS safety net) */
+.ah-hidden-term {
+	display: none !important;
+}
+
+/* Data attribute targets for JS click tracking (Pro) */
+[data-ah-master] {
+	/* intentionally unstyled — Pro analytics hooks onto this attribute */
+}
