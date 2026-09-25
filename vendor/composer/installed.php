@@ -3,7 +3,7 @@
         'name' => 'attributehub/attributehub-for-woocommerce',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '482d931a8fe25064e15df3de7b279b35a3e1deea',
+        'reference' => '872638dfd32e377f8d701e362a4e613c8b21ea12',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'attributehub/attributehub-for-woocommerce' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '482d931a8fe25064e15df3de7b279b35a3e1deea',
+            'reference' => '872638dfd32e377f8d701e362a4e613c8b21ea12',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -2,11 +2,11 @@
 Contributors: codesolz, m.tuhin
 Tags: woocommerce, attributes, product filters, layered navigation, attribute mapping
 Requires at least: 5.8
-Tested up to: 7.0
-Stable tag: 1.0.0
+Tested up to: 7.1
+Stable tag: 1.0.1
 Requires PHP: 8.0
 WC requires at least: 6.0
-WC tested up to: 9.9
+WC tested up to: 11.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,15 @@ When a customer clicks "Black" in your filter, AttributeHub intercepts the WooCo
 7. Frontend filter: before (ugly codes) vs after (clean master labels)
 
 == Changelog ==
+
+= 1.0.1 ( September 25, 2026 ) =
+* New: Improved Attribute Scanner for detecting duplicate and inconsistent attribute values
+* Improvement: Improved master attribute mapping and frontend filter handling
+* Improvement: Improved filter query expansion for mapped attribute values
+* Improvement: Improved Preview Mode for reviewing filter changes before applying them
+* Fix: Fixed minor issues affecting attribute mapping and frontend filter display
+* Fix: Fixed compatibility issues with certain WooCommerce attribute configurations
+* Improvement: Various performance, stability, and code improvements
 
 = 1.0.0 =
 * Initial release
