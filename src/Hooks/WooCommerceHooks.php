@@ -44,6 +44,7 @@ class WooCommerceHooks {
 		// Admin menus
 		$menu = new MenuRegistrar();
 		add_action( 'admin_menu', array( $menu, 'register' ) );
+		add_action( 'admin_menu', array( $menu, 'move_about_to_end' ), 10000 );
 
 		// Admin scripts
 		$enqueue = new EnqueueScripts();

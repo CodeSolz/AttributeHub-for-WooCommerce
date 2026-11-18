@@ -1,3 +1,6 @@
+### Version: 1.0.2 ( November 19, 2026 ) ###
+* **New:** About Us page at the end of the AttributeHub menu: what this plugin does, where to get help, and the other CodeSolz plugins. Its icons ship with the plugin, so the page loads nothing from outside your site.
+
 ### Version: 1.0.0 ( June 19, 2026 ) ###
 * **New:** Attribute Scanner — detects abbreviated, ugly, and duplicate attribute values across all WooCommerce attributes
 * **New:** Master Attribute Directory — create clean master labels and map multiple backend values to a single display label

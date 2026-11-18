@@ -3,7 +3,7 @@ Contributors: codesolz, m.tuhin
 Tags: woocommerce, attributes, product filters, layered navigation, attribute mapping
 Requires at least: 5.8
 Tested up to: 7.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 8.0
 WC requires at least: 6.0
 WC tested up to: 11.1
@@ -125,6 +125,9 @@ When a customer clicks "Black" in your filter, AttributeHub intercepts the WooCo
 7. Frontend filter: before (ugly codes) vs after (clean master labels)
 
 == Changelog ==
+
+= 1.0.2 ( November 19, 2026 ) =
+* New: About Us page at the end of the AttributeHub menu: what this plugin does, where to get help, and the other CodeSolz plugins. Its icons ship with the plugin, so the page loads nothing from outside your site.
 
 = 1.0.1 ( September 25, 2026 ) =
 * New: Improved Attribute Scanner for detecting duplicate and inconsistent attribute values

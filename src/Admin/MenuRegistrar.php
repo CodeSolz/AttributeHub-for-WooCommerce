@@ -14,6 +14,9 @@ defined( 'ABSPATH' ) || exit;
  */
 class MenuRegistrar {
 
+	/** Slug of the About Us page. */
+	const ABOUT_SLUG = 'attributehub-about';
+
 	/**
 	 * Registers menus. Called on admin_menu hook.
 	 */
@@ -91,6 +94,47 @@ class MenuRegistrar {
 
 		// Allow Pro plugin to add its own submenus
 		do_action( 'attributehub_register_pro_menus' );
+
+		// About Us — informational page, kept as the last item by move_about_to_end().
+		add_submenu_page(
+			'attributehub',
+			__( 'About Us', 'attributehub-for-woocommerce' ),
+			__( 'About Us', 'attributehub-for-woocommerce' ),
+			'manage_woocommerce',
+			self::ABOUT_SLUG,
+			array( $this, 'render_about' )
+		);
+	}
+
+	/**
+	 * Keeps About Us as the last submenu item, after any pages an add-on
+	 * (Pro) registers later on admin_menu. Hooked to admin_menu at a late priority.
+	 */
+	public function move_about_to_end(): void {
+		global $submenu;
+
+		if ( empty( $submenu['attributehub'] ) || ! is_array( $submenu['attributehub'] ) ) {
+			return;
+		}
+
+		foreach ( $submenu['attributehub'] as $index => $item ) {
+			if ( isset( $item[2] ) && self::ABOUT_SLUG === $item[2] ) {
+				unset( $submenu['attributehub'][ $index ] );
+				$submenu['attributehub']   = array_values( $submenu['attributehub'] ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				$submenu['attributehub'][] = $item; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				break;
+			}
+		}
+	}
+
+	/**
+	 * Renders the About Us admin page.
+	 */
+	public function render_about(): void {
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			wp_die( esc_html__( 'You do not have permission to access this page.', 'attributehub-for-woocommerce' ) );
+		}
+		include ATTRIBUTEHUB_DIR . 'templates/admin/about-us.php';
 	}
 
 	/**

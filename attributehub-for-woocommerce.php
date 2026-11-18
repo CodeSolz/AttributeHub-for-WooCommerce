@@ -3,7 +3,7 @@
  * Plugin Name:       AttributeHub for WooCommerce
  * Plugin URI:        https://codesolz.net/our-products/wordpress-plugin/attributehub-for-woocommerce/
  * Description:       Master attribute mapping for WooCommerce. Map messy supplier codes and imported attribute values to clean customer-facing filters — without touching your backend data.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            CodeSolz
  * Author URI:        https://codesolz.net
  * License:           GPL v2 or later
@@ -22,7 +22,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Plugin constants
-define( 'ATTRIBUTEHUB_VERSION',    '1.0.1' );
+define( 'ATTRIBUTEHUB_VERSION',    '1.0.2' );
 define( 'ATTRIBUTEHUB_DB_VERSION', '1.0.0' );
 define( 'ATTRIBUTEHUB_FILE',       __FILE__ );
 define( 'ATTRIBUTEHUB_DIR',        plugin_dir_path( __FILE__ ) );

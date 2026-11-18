@@ -31,6 +31,17 @@ class EnqueueScripts {
 	 * @param string $hook_suffix Current admin page hook suffix.
 	 */
 	public function enqueue_admin( string $hook_suffix ): void {
+		// The About Us page is self-contained: only its own stylesheet.
+		if ( str_ends_with( $hook_suffix, '_page_' . MenuRegistrar::ABOUT_SLUG ) ) {
+			wp_enqueue_style(
+				'attributehub-about',
+				ATTRIBUTEHUB_URL . 'assets/css/about-us.css',
+				array(),
+				ATTRIBUTEHUB_VERSION
+			);
+			return;
+		}
+
 		if ( ! $this->is_ah_admin_page( $hook_suffix ) && ! $this->is_product_edit_page( $hook_suffix ) ) {
 			return;
 		}
